@@ -1,15 +1,19 @@
-//your code here
-const inputE1=document.getElementById("newTodoInput");
-const buttonE1=document.getElementById("addTodoBtn");
-const olE1=document.getElementById("todoList");
-buttonE1.addEventListener('click',()=>{
-	let li=document.createElement("li");
-	
-	if(inputE1.value!==""){
-		li.textContent=inputE1.value;
-		olE1.appendChild(li);
-		inputE1.value="";
-	}
-	
-})
+ document.addEventListener("DOMContentLoaded", () => {
+        const inputEl = document.getElementById("newTodoInput");
+        const buttonEl = document.getElementById("addTodoBtn");
+        const olEl = document.getElementById("todoList");
+
+        buttonEl.addEventListener("click", () => {
+            const task = inputEl.value.trim();
+
+            if (task !== "") {
+                const li = document.createElement("li"); // ✅ Create <li> element
+                li.textContent = task; // ✅ Set text content
+                olEl.appendChild(li); // ✅ Append to <ol>
+                inputEl.value = ""; // ✅ Clear input field
+            } else {
+                alert("Please enter a task.");
+            }
+        });
+    });
 
